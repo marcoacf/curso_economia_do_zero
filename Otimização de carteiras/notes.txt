@@ -1,0 +1,36 @@
+### Lista de ações ###
+
+['JCI', 'TGT', 'CMCSA', 'CPB', 'MO', 'APA', 'MMC', 'JPM',
+'ZION', 'PSA', 'BAX', 'BMY', 'LUV', 'PCAR', 'TXT', 'TMO',
+'DE', 'MSFT', 'HPQ', 'SEE', 'VZ', 'CNP', 'NI', 'T', 'BA']
+
+### Ignorar avisos ###
+
+import warnings
+warnings.filterwarnings("ignore")
+
+### Alterar formato do pandas ###
+
+pd.options.display.float_format = '{:.4%}'.format
+
+### PASSO A PASSO ###
+
+- Instalar a biblioteca Riskfolio: pip install riskfolio-lib
+
+- Extrair os retornos dos ativos
+
+- Construir o objeto "Portfólio: rp.Portfolio(returns)
+
+- Inserir os métodos de análise histórica: port.assets_stats(method_mu="hist", method_cov="hist", d=0.94)
+
+- Criar pesos ótimos: port.optimization(model="Classic", rm="MV", obj="Sharpe", rf=0, hist=True)
+    - "Obj" (objetivo) pode ser MinRisk, MaxRet, Utility or Sharpe
+
+- Criar gráfico para visualizar: rp.plot_pie(pesos)
+
+### Medidas de risco ###
+
+['MV', 'MAD', 'MSV', 'FLPM', 'SLPM', 'CVaR',
+'EVaR', 'WR', 'MDD', 'ADD', 'CDaR', 'UCI', 'EDaR']
+
+- Formatação: .style.format("{:.2%}").background_gradient(cmap='YlGn')
